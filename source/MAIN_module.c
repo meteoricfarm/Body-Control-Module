@@ -437,25 +437,25 @@ RETURN		: void
 #endif
 ******************************************************************/
 void vMAIN_StartMainTimer( void ) {
-	TM2MD  &= (UCHAR)(~BP_BIT3);				/* Clock Stop */
-	TM2ICR &= (UCHAR)(~BP_BIT1);				/* IRQ disable */
-	CK2MD   =  0x08;							/* fpll-div/128 */
-	TM2MD  |=  BP_BIT0;							/* NormalTimer,TM2PSC */
-	TM2MD  &= (UCHAR)(~(BP_BIT5|BP_BIT4|BP_BIT1));
-	TM2OC   =  0xFF;
-	TM2MD  |=  BP_BIT3;							/* Clock Start */
+	TM2MD &= (UCHAR)(~BP_BIT3);		/* Clock Stop */
+	TM2ICR &= (UCHAR)(~BP_BIT1);	/* IRQ disable */
+	CK2MD = 0x08;					/* fpll-div/128 */
+	TM2MD |= BP_BIT0;				/* NormalTimer,TM2PSC */
+	TM2MD &= (UCHAR)(~(BP_BIT5|BP_BIT4|BP_BIT1));
+	TM2OC = 0xFF;
+	TM2MD |= BP_BIT3;				/* Clock Start */
 
-	TMRICR  = 0x00;								/* Disable interrupt */
+	TMRICR = 0x00;	/* Disable interrupt */
 
-	TMRMD1  = 0x00;								/* Default settings */
-	TMRMD2  = 0x0A;								/* fpll = 5MHz, n = 4 */
-	TMRBCL  = 0x00;								/* Initialize binary counter */
-	TMRBCM  = 0x00;
-	TMRBCH  = 0x00;
-	TMRMD1  = 0x10;								/* Generate interrupt every 1sec */
-	TMRMD1  = 0x11;								/* Enable 24H timer operation */
+	TMRMD1 = 0x00;	/* Default settings */
+	TMRMD2 = 0x0A;	/* fpll = 5MHz, n = 4 */
+	TMRBCL = 0x00;	/* Initialize binary counter */
+	TMRBCM = 0x00;
+	TMRBCH = 0x00;
+	TMRMD1 = 0x10;	/* Generate interrupt every 1sec */
+	TMRMD1 = 0x11;	/* Enable 24H timer operation */
 	
-	TMRICR  = 0x42;								/* Enable interrupt */
+	TMRICR = 0x42;	/* Enable interrupt */
 }	
 
 /******************************************************************
