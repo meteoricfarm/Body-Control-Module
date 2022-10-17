@@ -29,14 +29,14 @@ DATE		:
 #define	SENSOR_LOOP_MS		(12)
 
 /* SW1_IN: To be replaced by P62 input */
-#define BRD_MODE		(1)		/* 0:master, 1:slave */
+#define BRD_MODE	(1)		/* 0:master, 1:slave */
 /* SW2_IN: To be replaced by P63 input */
-#define SYS_BUS			(1)		/* 0:LIN, 1:CAN */
+#define SYS_BUS		(1)		/* 0:LIN, 1:CAN */
 
-/*
-#define SW3_P67			(0x80)
-#define SW3_P66			(0x40)
-#define SW3_IN			(UCHAR)(((P6IN & SW3_P67)|(P6IN & SW3_P66)) >> 6)*/
+
+// #define SW3_P67			(0x80)
+// #define SW3_P66			(0x40)
+// #define SW3_IN			(UCHAR)(((P6IN & SW3_P67)|(P6IN & SW3_P66)) >> 6)
 						/* value :  master :  slave  */
 						/*   0   :   LED   : HallIC  */
 						/*   1   :  Buzzer :  ADCIn  */
@@ -64,16 +64,18 @@ extern	UCHAR				ucINT_Proc_RxData;
 extern	UCHAR				ucCAN_NowRcvData[11];
 extern	LIN_RESPONSE_INFO	LIN_ResponsInfoTable[LIN_RES_VALUE];
 
-const UCHAR LED_7SEG[] = { 	0xFC, /* 0 */
-							0x60, /* 1 */
-							0xDA, /* 2 */
-							0xF2, /* 3 */
-							0x66, /* 4 */
-							0xB6, /* 5 */
-							0xBE, /* 6 */
-							0xE4, /* 7 */
-							0xFE, /* 8 */
-							0xF6  /* 9 */ };
+const UCHAR LED_7SEG[] = {
+	0xFC, /* 0 */
+	0x60, /* 1 */
+	0xDA, /* 2 */
+	0xF2, /* 3 */
+	0x66, /* 4 */
+	0xB6, /* 5 */
+	0xBE, /* 6 */
+	0xE4, /* 7 */
+	0xFE, /* 8 */
+	0xF6  /* 9 */ 
+};
 
 /******************************************************************
 #ifdef DOC
