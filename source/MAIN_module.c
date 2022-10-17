@@ -417,7 +417,7 @@ void vMAIN_GetSWInputs( void ) {
 	
 	/* SW2_IN: SYS_BUS P63 input */
 	/* ucSYS_BUS  = (UCHAR)((P6IN & 0x04) >> 3); */
-	ucSYS_BUS  = SYS_BUS;
+	ucSYS_BUS = SYS_BUS;
 	if( ucBRD_MODE ) {
 		usCAN_TxID   = CAN_RCVID_ID4;
 		usCAN_DestID = CAN_RCVID_ID3;
