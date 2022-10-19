@@ -1,6 +1,10 @@
 This repository is cloned from https://github.com/prapkengr/Body-Control-Module-BCM.git
 and fixed build error at POSIX
 
+# Build and Clean
+make
+make clean
+
 # Body-Control-Module-BCM
 Car Door - Body Control Module (BCM) demo .
 
